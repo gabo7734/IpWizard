@@ -1,0 +1,12 @@
+@use '@carbon/react';
+$feature-flags: (
+  components-x: true,
+  breaking-changes-x: true,
+  grid: true,
+  ui-shell: true
+);
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+}

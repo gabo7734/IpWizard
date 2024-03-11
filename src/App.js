@@ -31,29 +31,9 @@ const headers = [
   },
 ];
 
-const items = [{
-  id: 'option-0',
-  text: 'An example option that is really long to show what should be done to handle long text'
-}, {
-  id: 'option-1',
-  text: 'Option 1'
-}, {
-  id: 'option-2',
-  text: 'Option 2'
-}, {
-  id: 'option-3',
-  text: 'Option 3 - a disabled item',
-  disabled: true
-}, {
-  id: 'option-4',
-  text: 'Option 4'
-}, {
-  id: 'option-5',
-  text: 'Option 5'
-}];
 
 
-const bearer = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwOTY3MDc0OSwianRpIjoiZjZiZTY0YmItMWQ1Mi00ZWM3LWFlOGItMWQyNTIzNDIzNWZiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MywibmJmIjoxNzA5NjcwNzQ5LCJjc3JmIjoiODcwY2I5MzEtY2VkNi00OWM2LWIwNmItZThjNmQwMGVkMzQ0IiwiZXhwIjoxNzA5Njc0MzQ5fQ.K-NKtlSkG0eQwwjhRSYsff6K0OwHyUsf6EthRG0bDuQ';
+const bearer = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwOTkzMjY3NiwianRpIjoiYTU0ODRlN2UtMTQ3Ni00YjkyLThlM2ItNjE3MzU3YjVlN2Y5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzA5OTMyNjc2LCJjc3JmIjoiMWU3MWFkNTItZGVmNy00OGZmLTk4NjMtYTAyNDM3ODViYzdjIiwiZXhwIjoxNzEwMDE5MDc2fQ.gcdkWyMqHYPN7DYz5rQkFrSLfdZYnX4VSP6sduksyMI';
  
 
 function App() {

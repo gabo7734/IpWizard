@@ -119,7 +119,7 @@ function App() {
   return (
     <div>
       <Header >
-        <HeaderName href="#" prefix="IBM"> IP Wizard </HeaderName>
+        <HeaderName href="#" prefix="IBM"> IPWizard </HeaderName>
         <HeaderNavigation aria-label="IBM [Platform]">
         </HeaderNavigation>
       </Header>

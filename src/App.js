@@ -153,7 +153,7 @@ function App() {
               width: 300
             }}>
               <ComboBox onChange={handleDropdownChange} id="carbon-combobox" items={locations} downshiftProps={{
-              }} itemToString={item => item ? item.name : ''} helperText="Combobox helper text" />
+              }} itemToString={item => item ? item.name : ''} helperText="Choose a location" />
             </div >
           </Column>
           <Column lg={4}>

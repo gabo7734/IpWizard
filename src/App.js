@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from 'react';
-import { Header, HeaderName, HeaderNavigation, Content, Button, Search, ComboBox, FileUploaderDropContainer, FormItem, Tile, Link } from '@carbon/react';
+import { Header, HeaderName, HeaderNavigation, Content, Button, Search, ComboBox, FileUploaderDropContainer, FormItem, Tile, HeaderMenuItem } from '@carbon/react';
 import {
   DataTable,
   Table,
@@ -124,6 +124,9 @@ function App() {
       <Header >
         <HeaderName href="#" prefix="IBM"> IPWizard </HeaderName>
         <HeaderNavigation aria-label="IBM [Platform]">
+        <HeaderMenuItem href="#">IPs</HeaderMenuItem>
+        <HeaderMenuItem href="#">Locations</HeaderMenuItem>
+        <HeaderMenuItem href="#">Firewalls</HeaderMenuItem>
         </HeaderNavigation>
 
         <Logout className='logout-button' />

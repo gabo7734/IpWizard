@@ -15,6 +15,7 @@ import { Information } from '@carbon/react/icons';
 import { Grid, Column } from '@carbon/react';
 
 import axios from 'axios';
+import List from './Components/List';
 
 const headers = [
   {
@@ -33,7 +34,7 @@ const headers = [
 
 
 
-const bearer = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcwOTkzMjY3NiwianRpIjoiYTU0ODRlN2UtMTQ3Ni00YjkyLThlM2ItNjE3MzU3YjVlN2Y5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzA5OTMyNjc2LCJjc3JmIjoiMWU3MWFkNTItZGVmNy00OGZmLTk4NjMtYTAyNDM3ODViYzdjIiwiZXhwIjoxNzEwMDE5MDc2fQ.gcdkWyMqHYPN7DYz5rQkFrSLfdZYnX4VSP6sduksyMI';
+const bearer = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxMTAzNTg2MywianRpIjoiMWIzNzRkNTMtYjQzZi00MDY1LTg4MDktMDk2YWVhYjFkY2E4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzExMDM1ODYzLCJjc3JmIjoiZTU2YmI0MmYtZGIzMS00OWU3LTg4ZTYtN2Y3ZjY2ZWE5MDg1IiwiZXhwIjoxNzExMTIyMjYzfQ.A77zM4C7HOYPTByM5h50KkS459G90aY9KuHixC9V1uk';
  
 
 function App() {
@@ -205,36 +206,7 @@ function App() {
         <br />
         <br />
 
-        <DataTable rows={rows} headers={headers}>
-          {({ rows, headers, getTableProps, getHeaderProps, getRowProps }) => (
-            <Table {...getTableProps()}>
-              <TableHead>
-                <TableRow>
-                  {headers.map((header) => (
-                    <TableHeader {...getHeaderProps({ header })}>
-                      {header.header}
-                    </TableHeader>
-                  ))}
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {rows.map((row, index) => (
-                  <TableRow  {...getRowProps({ row })}>
-                    {row.cells.map((cell) => (
-                      <TableCell key={index}>
-                        {cell.id === cell.value+':id' ? (
-                          IP
-                        ) : (
-                          cell.value
-                        )}
-                      </TableCell>
-                    ))}
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          )}
-        </DataTable>
+        <List rows={rows} IP={IP}> </List>
       </Content>
 
     </div>

@@ -8,14 +8,16 @@ import {
   TableHeader,
   TableBody,
   TableCell,
-  Toggletip, ToggletipButton, ToggletipContent
+  Toggletip, ToggletipButton, ToggletipContent, 
 } from '@carbon/react';
 
-import { Information } from '@carbon/react/icons';
+import { Information, Logout } from '@carbon/react/icons';
 import { Grid, Column } from '@carbon/react';
 
 import axios from 'axios';
 import List from './Components/List';
+
+
 
 const headers = [
   {
@@ -34,7 +36,7 @@ const headers = [
 
 
 
-const bearer = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxMTAzNTg2MywianRpIjoiMWIzNzRkNTMtYjQzZi00MDY1LTg4MDktMDk2YWVhYjFkY2E4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzExMDM1ODYzLCJjc3JmIjoiZTU2YmI0MmYtZGIzMS00OWU3LTg4ZTYtN2Y3ZjY2ZWE5MDg1IiwiZXhwIjoxNzExMTIyMjYzfQ.A77zM4C7HOYPTByM5h50KkS459G90aY9KuHixC9V1uk';
+const bearer = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxMTEyMzQyNywianRpIjoiN2Y5ODYwMTQtNTM4OC00ODM4LThjOWYtNTk3NWNjYWMyNzQ1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzExMTIzNDI3LCJjc3JmIjoiNWUxMDQzYmQtNzRiZi00Mzc1LTg2ZDUtZmJhNTZjMzRlM2Y2IiwiZXhwIjoxNzExMjA5ODI3fQ.YcJgpxrb6o-gXfmjo8HKnIJ5xBi2XU4iufNXL84lOHk';
  
 
 function App() {
@@ -123,6 +125,8 @@ function App() {
         <HeaderName href="#" prefix="IBM"> IPWizard </HeaderName>
         <HeaderNavigation aria-label="IBM [Platform]">
         </HeaderNavigation>
+
+        <Logout className='logout-button' />
       </Header>
 
       <Content id='main-content'>
@@ -205,6 +209,8 @@ function App() {
 
         <br />
         <br />
+
+        <Button > Add an IP</Button>
 
         <List rows={rows} IP={IP}> </List>
       </Content>

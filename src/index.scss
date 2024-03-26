@@ -12,7 +12,8 @@ $feature-flags: (
 }
 
 
-.logout-button{
+.user-button{
+  display: flex;
   position: absolute;
   right: 0;
 }

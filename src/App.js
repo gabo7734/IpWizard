@@ -11,7 +11,7 @@ import {
   Toggletip, ToggletipButton, ToggletipContent, 
 } from '@carbon/react';
 
-import { Information, Logout } from '@carbon/react/icons';
+import { Information, Logout, User } from '@carbon/react/icons';
 import { Grid, Column } from '@carbon/react';
 
 import axios from 'axios';
@@ -129,7 +129,10 @@ function App() {
         <HeaderMenuItem href="#">Firewalls</HeaderMenuItem>
         </HeaderNavigation>
 
-        <Logout className='logout-button' />
+        <div className='user-button'> <User />
+        <Logout  /> </div>
+
+       
       </Header>
 
       <Content id='main-content'>

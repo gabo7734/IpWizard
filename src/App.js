@@ -15,9 +15,7 @@ import { Information, Logout, User } from '@carbon/react/icons';
 import { Grid, Column } from '@carbon/react';
 
 import axios from 'axios';
-import List from './Components/List';
-
-
+import List from './Components/ListLocations';
 
 const headers = [
   {
@@ -35,8 +33,7 @@ const headers = [
 ];
 
 
-
-const bearer = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxMTEyMzQyNywianRpIjoiN2Y5ODYwMTQtNTM4OC00ODM4LThjOWYtNTk3NWNjYWMyNzQ1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzExMTIzNDI3LCJjc3JmIjoiNWUxMDQzYmQtNzRiZi00Mzc1LTg2ZDUtZmJhNTZjMzRlM2Y2IiwiZXhwIjoxNzExMjA5ODI3fQ.YcJgpxrb6o-gXfmjo8HKnIJ5xBi2XU4iufNXL84lOHk';
+const bearer = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxMTQ3NzAyMiwianRpIjoiYTFlN2EwMzItOGNjOC00MzAzLTg5MWQtMDVhZmRkOTcwMDUxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzExNDc3MDIyLCJjc3JmIjoiODQ2Y2RkYzktZjAwNi00MzFjLWEzODEtNjI3NTA3MTM1NTBmIiwiZXhwIjoxNzExNTYzNDIyfQ.oZ2Y_jBMRQOANe-9HGKIwdNj0xq9d4uMQ92H1f3s-8Y';
  
 
 function App() {
@@ -64,10 +61,6 @@ function App() {
 
     getLocations();
   }, []); 
-
-
-
-
 
 
   //Main search
@@ -125,7 +118,7 @@ function App() {
         <HeaderName href="#" prefix="IBM"> IPWizard </HeaderName>
         <HeaderNavigation aria-label="IBM [Platform]">
         <HeaderMenuItem href="#">IPs</HeaderMenuItem>
-        <HeaderMenuItem href="#">Locations</HeaderMenuItem>
+        <HeaderMenuItem href="Components/Locations">Locations</HeaderMenuItem>
         <HeaderMenuItem href="#">Firewalls</HeaderMenuItem>
         </HeaderNavigation>
 

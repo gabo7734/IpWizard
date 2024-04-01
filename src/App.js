@@ -14,9 +14,9 @@ import {
 import { Information, Logout, User } from '@carbon/react/icons';
 import { Grid, Column } from '@carbon/react';
 
-import axios from 'axios';
-import List from './Components/ListLocations';
-
+import axios from 'axios'
+import List from './components/List';
+import { Route, useNavigate } from 'react-router-dom';
 const headers = [
   {
     key: 'firewall',
@@ -33,7 +33,7 @@ const headers = [
 ];
 
 
-const bearer = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxMTQ3NzAyMiwianRpIjoiYTFlN2EwMzItOGNjOC00MzAzLTg5MWQtMDVhZmRkOTcwMDUxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzExNDc3MDIyLCJjc3JmIjoiODQ2Y2RkYzktZjAwNi00MzFjLWEzODEtNjI3NTA3MTM1NTBmIiwiZXhwIjoxNzExNTYzNDIyfQ.oZ2Y_jBMRQOANe-9HGKIwdNj0xq9d4uMQ92H1f3s-8Y';
+const bearer = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxMTk4MjM5OSwianRpIjoiNTAyNzc0OGYtMmYzZS00NWRhLWEzZjAtNDRiOGQ4MzcwOGQ5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzExOTgyMzk5LCJjc3JmIjoiNzkxZDc3ODItZTQwNy00NjEzLWIyZDEtMmZmMzU0MzgzODkwIiwiZXhwIjoxNzEyMDY4Nzk5fQ.mDqlLi2Dlv2gdouXKA6SlI50Ni2aF-t_-8v7njJ6MYw';
  
 
 function App() {
@@ -78,6 +78,8 @@ function App() {
   const [IP, setIP] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
 
+  let navigate = useNavigate()
+
  
   const buscarPorIp = async (IP) => {
     try {
@@ -115,11 +117,16 @@ function App() {
   return (
     <div>
       <Header >
+     
         <HeaderName href="#" prefix="IBM"> IPWizard </HeaderName>
         <HeaderNavigation aria-label="IBM [Platform]">
+         
         <HeaderMenuItem href="#">IPs</HeaderMenuItem>
-        <HeaderMenuItem href="Components/Locations">Locations</HeaderMenuItem>
+        <HeaderMenuItem href={navigate('./components/Locations') }>Locations</HeaderMenuItem>
         <HeaderMenuItem href="#">Firewalls</HeaderMenuItem>
+
+    
+       
         </HeaderNavigation>
 
         <div className='user-button'> <User />

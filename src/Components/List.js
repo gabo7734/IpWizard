@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     DataTable,
     Table,
@@ -10,7 +10,7 @@ import {
 } from '@carbon/react';
 
 
-function ListLocations(props) {
+function List(props) {
 
     const headers = [
         {
@@ -29,12 +29,21 @@ function ListLocations(props) {
 
 
 
+
+
+
+    const [rows, setRows] = useState([]);
+  const [IP, setIP] = useState('');
+  
+  
+
+
     return (
 
 
         <div>
 
-            <DataTable rows={props.rows} headers={headers}>
+            <DataTable rows={rows} headers={headers}>
                 {({ rows, headers, getTableProps, getHeaderProps, getRowProps }) => (
                     <Table {...getTableProps()}>
                         <TableHead>
@@ -52,7 +61,7 @@ function ListLocations(props) {
                                     {row.cells.map((cell) => (
                                         <TableCell key={index}>
                                             {cell.id === cell.value + ':id' ? (
-                                                props.IP
+                                                IP
                                             ) : (
                                                 cell.value
                                             )}
@@ -69,4 +78,4 @@ function ListLocations(props) {
 
 }
 
-export default ListLocations
+export default List

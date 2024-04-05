@@ -223,7 +223,36 @@ function App() {
 
         <Button > Add an IP</Button>
 
-        <List > </List>
+        <DataTable rows={rows} headers={headers}>
+                {({ rows, headers, getTableProps, getHeaderProps, getRowProps }) => (
+                    <Table {...getTableProps()}>
+                        <TableHead>
+                            <TableRow>
+                                {headers.map((header) => (
+                                    <TableHeader {...getHeaderProps({ header })}>
+                                        {header.header}
+                                    </TableHeader>
+                                ))}
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {rows.map((row, index) => (
+                                <TableRow  {...getRowProps({ row })}>
+                                    {row.cells.map((cell) => (
+                                        <TableCell key={index}>
+                                            {cell.id === cell.value + ':id' ? (
+                                                IP
+                                            ) : (
+                                                cell.value
+                                            )}
+                                        </TableCell>
+                                    ))}
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                )}
+            </DataTable>
       </Content>
 
     </div>

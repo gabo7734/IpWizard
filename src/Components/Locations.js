@@ -1,4 +1,3 @@
-import ListLocations from "./List"
 import React, { Component, useEffect, useState } from 'react';
 import { Modal, Button, Select, MultiSelect, Dropdown, SelectItem, TextInput } from '@carbon/react';
 import List from "./List";

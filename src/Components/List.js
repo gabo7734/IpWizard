@@ -10,7 +10,7 @@ import {
 } from '@carbon/react';
 
 
-function List(props) {
+function List() {
 
     const headers = [
         {

@@ -8,7 +8,7 @@ import {
   TableHeader,
   TableBody,
   TableCell,
-  Toggletip, ToggletipButton, ToggletipContent, 
+  Toggletip, ToggletipButton, ToggletipContent,
 } from '@carbon/react';
 
 import { Information, Logout, User } from '@carbon/react/icons';
@@ -16,7 +16,10 @@ import { Grid, Column } from '@carbon/react';
 
 import axios from 'axios'
 import List from './components/List';
-import { Route, useNavigate } from 'react-router-dom';
+import Locations from './components/Locations';
+
+import { BrowserRouter, Route, Switch, Link, Routes } from "react-router-dom";
+
 const headers = [
   {
     key: 'firewall',
@@ -34,7 +37,7 @@ const headers = [
 
 
 const bearer = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcxMTk4MjM5OSwianRpIjoiNTAyNzc0OGYtMmYzZS00NWRhLWEzZjAtNDRiOGQ4MzcwOGQ5IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzExOTgyMzk5LCJjc3JmIjoiNzkxZDc3ODItZTQwNy00NjEzLWIyZDEtMmZmMzU0MzgzODkwIiwiZXhwIjoxNzEyMDY4Nzk5fQ.mDqlLi2Dlv2gdouXKA6SlI50Ni2aF-t_-8v7njJ6MYw';
- 
+
 
 function App() {
 
@@ -47,7 +50,7 @@ function App() {
     const getLocations = async () => {
       try {
         const headers = {
-          'accept': ' application/json', 
+          'accept': ' application/json',
           'Authorization': 'Bearer ' + bearer,
         };
         const response = await axios.get('https://firewallvalidation.onrender.com/location', { headers });
@@ -60,7 +63,7 @@ function App() {
     };
 
     getLocations();
-  }, []); 
+  }, []);
 
 
   //Main search
@@ -78,16 +81,16 @@ function App() {
   const [IP, setIP] = useState('');
   const [selectedLocation, setSelectedLocation] = useState('');
 
-  let navigate = useNavigate()
 
- 
+
+
   const buscarPorIp = async (IP) => {
     try {
       const headers = {
-        'Authorization': 'Bearer '+ bearer,
+        'Authorization': 'Bearer ' + bearer,
         'accept': ' application/json',
       };
-      const response = await axios.get('https://firewallvalidation.onrender.com/location/'+selectedLocation.id + '/search/'+IP, { headers });
+      const response = await axios.get('https://firewallvalidation.onrender.com/location/' + selectedLocation.id + '/search/' + IP, { headers });
       const objLoweCase = response.data.map(obj => convertKeysToLowercase(obj));
       setRows(objLoweCase);
     } catch (error) {
@@ -99,7 +102,7 @@ function App() {
 
     buscarPorIp(IP);
 
-  }, [ IP]);
+  }, [IP]);
 
 
   const handleInputChange = (event) => {
@@ -110,29 +113,31 @@ function App() {
     setSelectedLocation(event.selectedItem);
   };
 
-//
- 
+  //
+
 
 
   return (
     <div>
       <Header >
-     
+
         <HeaderName href="#" prefix="IBM"> IPWizard </HeaderName>
         <HeaderNavigation aria-label="IBM [Platform]">
-         
-        <HeaderMenuItem href="#">IPs</HeaderMenuItem>
-        <HeaderMenuItem href={navigate('./components/Locations') }>Locations</HeaderMenuItem>
-        <HeaderMenuItem href="#">Firewalls</HeaderMenuItem>
 
-    
-       
+
+
+          <HeaderMenuItem href="#">IPs</HeaderMenuItem>
+          <HeaderMenuItem href="components/Locations.js">Locations</HeaderMenuItem>
+          <HeaderMenuItem href="#">Firewalls</HeaderMenuItem>
+
+
+
         </HeaderNavigation>
 
         <div className='user-button'> <User />
-        <Logout  /> </div>
+          <Logout /> </div>
 
-       
+
       </Header>
 
       <Content id='main-content'>
@@ -218,7 +223,7 @@ function App() {
 
         <Button > Add an IP</Button>
 
-        <List rows={rows} IP={IP}> </List>
+        <List > </List>
       </Content>
 
     </div>
